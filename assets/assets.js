@@ -3,8 +3,12 @@ import menu_icon from "./menu_icon.png";
 import dropdown_icon from "./dropdown_icon.png";
 import arrow_drop_down from "./arrow_drop_down.png";
 import arrow_back from "./arrow_back.png";
-import user_icon from './user_icon.png'
-import search_icon from './search_icon.png'
+import user_icon from "./user_icon.png";
+import search_icon from "./search_icon.png";
+import arrow_right from "./arrow_right.png";
+import heart_icon from "./heart_icon.svg";
+import star_dull_icon from "./star_dull_icon.svg";
+import star_icon from "./star_icon.svg";
 
 export const assets = {
   logo,
@@ -14,4 +18,8 @@ export const assets = {
   arrow_back,
   user_icon,
   search_icon,
+  arrow_right,
+  heart_icon,
+  star_dull_icon,
+  star_icon,
 };

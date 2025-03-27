@@ -1,5 +1,6 @@
 "use client"
 
+import { assets } from '@/assets/assets';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 
@@ -36,7 +37,7 @@ const HeaderSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sliderData.length);
-    }, 3000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [sliderData.length]);
 
@@ -45,7 +46,7 @@ const HeaderSlider = () => {
   };
 
   return (
-    <div className="w-full h-screen justify-center pt-16">
+    <div className="w-full justify-center pt-16">
       <div className="overflow-hidden relative w-full">
         <div
           className="flex transition-transform duration-700 ease-in-out"
@@ -64,11 +65,12 @@ const HeaderSlider = () => {
                   {slide.title}
                 </h1>
                 <div className="flex items-center mt-4 md:mt-6 ">
-                  <button className="md:px-10 px-7 md:py-2.5 py-2 bg-emerald-600 rounded-full text-white font-medium">
+                  <button className="cursor-pointer md:px-10 px-7 md:py-2.5 py-2 bg-emerald-600 hover:bg-emerald-400 rounded-full text-white font-medium">
                     {slide.buttonText1}
                   </button>
-                  <button className="group flex items-center gap-2 px-6 py-2.5 font-medium">
+                  <button className="cursor-pointer group flex items-center px-6 py-2.5 font-medium hover:underline">
                     {slide.buttonText2}
+                    <Image src={assets.arrow_right} className='w-4 group-hover:translate-x-2 transition' alt='arrow_right'/>
                     {/* <Image className="group-hover:translate-x-1 transition" src={assets.arrow_icon} alt="arrow_icon" /> */}
                   </button>
                 </div>
