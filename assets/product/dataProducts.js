@@ -27,7 +27,7 @@ export const productsDetailDummyData = [
     ],
       "rating": 4.5,
     "price": "30.000",
-    "offerPrice": "20.000",
+    "discountPrice": "20.000",
     "image": [
       pupuk_250ml
     ],
@@ -44,7 +44,7 @@ export const productsDetailDummyData = [
       "how_to_use" : [],
       "rating": 4.5,
     "price": "50.000",
-    "offerPrice": "25.000",
+    "discountPrice": "25.000",
     "image": [
       pupuk_100ml
     ],

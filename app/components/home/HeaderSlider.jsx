@@ -8,17 +8,17 @@ const HeaderSlider = () => {
   const sliderData = [
     {
       id: 1,
-      title: "Lorem ipsum dolor sit amet consectetur. 1",
-      offer: "Limited Time Offer 30% Off",
-      buttonText1: "Buy now",
+      title: "3 Rahasia Berkebun di Lahan 1m²",
+      offer: "Pelajari teknik compact gardening dari ahli",
+      buttonText1: "Check now",
       buttonText2: "Find more",
       // imgSrc: assets.header_headphone_image,
     },
     {
       id: 2,
-      title: "Lorem ipsum dolor sit amet consectetur. 2",
-      offer: "Hurry up only few lefts!",
-      buttonText1: "Shop Now",
+      title: "Investasi Hijau Mulai Hari Ini! Diskon 25% sampai [tanggal]",
+      offer: "Waktu Terbatas! Kursus Lengkap Urban Farming dengan harga terbaik",
+      buttonText1: "Check Now",
       buttonText2: "Explore Deals",
       // imgSrc: assets.header_playstation_image,
     },

@@ -1,4 +1,5 @@
 "use client"
+import { courseDetailDummyData } from '@/assets/course/dataCourse'
 import { productsCard, productsDetailDummyData } from '@/assets/product/dataProducts'
 import { useRouter } from 'next/navigation'
 import { createContext, useContext, useEffect, useState } from 'react'
@@ -16,6 +17,7 @@ export const AppFloreraContentProvider = (props) => {
 
     const [isSeller, setIsSeller] = useState(true)
     const [products, setProducts] = useState([])
+    const [courses, setCourses] = useState([])
 
     const fetchProductData = async () => {
         setProducts(productsDetailDummyData)
@@ -25,9 +27,17 @@ export const AppFloreraContentProvider = (props) => {
     //     setUserData(userDummyData)
     // }
 
+    const fetchCourseData = async () => {
+        setCourses(courseDetailDummyData)
+    }
+
     useEffect(() => {
         fetchProductData()
     }, [])
+
+    useEffect(() => {
+        fetchCourseData()
+    },[])
 
     // useEffect(() => {
     //     fetchUserData()
@@ -36,7 +46,7 @@ export const AppFloreraContentProvider = (props) => {
     const value = {
         currency, currencySymbol, router,
         isSeller, setIsSeller, products, setProducts, 
-        fetchProductData,
+        fetchProductData, courses, setCourses, fetchCourseData,
     }
 
     return (

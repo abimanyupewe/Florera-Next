@@ -2,7 +2,7 @@
 
 import { useAppFloreraContent } from '@/app/context/AppFloreraContent'
 import React from 'react'
-import ProductCard from '../ProductCard'
+import ProductCard from './components/ProductCard'
 
 const ProductSection = () => {
 

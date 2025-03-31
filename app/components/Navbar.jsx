@@ -81,8 +81,8 @@ const Navbar = () => {
 
             {/* Menu Desktop */}
             <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
-                {["/", "/collection", "/shop", "/about", "/contact"].map((path, index) => {
-                    const labels = ["Home", "Collection", "Shop", "About", "Contact"];
+                {["/", "/collection", "/about", "/contact"].map((path, index) => {
+                    const labels = ["Home", "Collection", "About", "Contact"];
                     const isActive = pathname === path;
 
                     // Jika path adalah "/collection", tambahkan dropdown
@@ -118,7 +118,7 @@ const Navbar = () => {
                                                 setIsRotatedColl(false);
                                             }}
                                         >
-                                            Skills
+                                            Shop
                                         </ScrollLink>
                                         <ScrollLink
                                             to="project"
@@ -129,7 +129,7 @@ const Navbar = () => {
                                                 setIsRotatedColl(false);
                                             }}
                                         >
-                                            Projects
+                                            Courses
                                         </ScrollLink>
                                     </div>
                                 )}

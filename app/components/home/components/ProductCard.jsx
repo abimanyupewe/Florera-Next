@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
           width={800}
           height={800}
         />
-        <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">
+        <button className="absolute top-2 right-2 bg-white p-2 hover:bg-gray-200 cursor-pointer rounded-full shadow-md">
           <Image
             className="h-3 w-3"
             src={assets.heart_icon}
@@ -50,8 +50,8 @@ const ProductCard = ({ product }) => {
       </div>
 
       <div className="flex gap-2 w-full mt-1">
-        <p className="line-through text-base text-gray-400">{currency}{product.price}</p>
-        <p className="text-base font-medium">{currency}{product.offerPrice}</p>
+        <p className="line-through text-base text-gray-400">{currency} {product.price}</p>
+        <p className="text-base font-medium">{currency} {product.offerPrice}</p>
       </div>
 
       <div className="flex w-full justify-evenly gap-2 mt-1">

@@ -1,6 +1,6 @@
 "use client"
 
-import ProductCard from '@/app/components/ProductCard';
+import ProductCard from '@/app/components/home/components/ProductCard';
 import Loading from '@/app/components/Loading';
 import Navbar from '@/app/components/Navbar';
 import { useAppFloreraContent } from '@/app/context/AppFloreraContent';
@@ -97,14 +97,14 @@ const ProductDetail = () => {
                                     alt="star_dull_icon"
                                 />
                             </div>
-                            <p>(4.5)</p>
+                            <p>{productData.rating}</p>
                         </div>
                         <p className="text-gray-600 mt-3">
                             {productData.description}
                         </p>
                         <div className="flex mt-6 items-center justify-between">
                             <p className="text-3xl font-medium">
-                                {currency}{productData.offerPrice}
+                                {currency}{productData.discountPrice}
                                 <span className="text-base font-normal text-gray-800/60 line-through ml-2">
                                     {currency}{productData.price}
                                 </span>

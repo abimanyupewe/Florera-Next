@@ -9,6 +9,9 @@ import arrow_right from "./arrow_right.png";
 import heart_icon from "./heart_icon.svg";
 import star_dull_icon from "./star_dull_icon.svg";
 import star_icon from "./star_icon.svg";
+import duration from "./duration.png";
+import module_icon from "./menu_book.png";
+import cart_icon from "./shopping_cart.png";
 
 export const assets = {
   logo,
@@ -22,4 +25,7 @@ export const assets = {
   heart_icon,
   star_dull_icon,
   star_icon,
+  duration,
+  module_icon,
+  cart_icon,
 };
