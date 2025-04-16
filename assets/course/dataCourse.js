@@ -1,4 +1,8 @@
 import foto_dummy_01 from "./foto-dummy-01.jpg";
+import foto_dummy_02 from "./foto-dummy-02.jpg";
+import foto_dummy_03 from "./foto-dummy-03.jpg";
+import foto_dummy_04 from "./foto-dummy-04.jpg";
+import foto_dummy_05 from "./foto-dummy-05.jpg";
 
 export const courseDetailDummyData = [
   {
@@ -40,7 +44,7 @@ export const courseDetailDummyData = [
     rating: 4.8,
     price: "120.000",
     discountPrice: "Free",
-    thumbnail: foto_dummy_01,
+    thumbnail: foto_dummy_02,
     category: ["Urban Farming", "Hidroponik"],
     totalModule: 2,
     level: "Pemula",
@@ -70,7 +74,7 @@ export const courseDetailDummyData = [
     rating: 4.7,
     price: "85.000",
     discountPrice: "75.000",
-    thumbnail: foto_dummy_01,
+    thumbnail: foto_dummy_03,
     category: ["Urban Farming", "Microgreens"],
     totalModule: 2,
     level: "Pemula",
@@ -100,7 +104,7 @@ export const courseDetailDummyData = [
     rating: 4.5,
     price: "45.000",
     discountPrice: "Free",
-    thumbnail: foto_dummy_01,
+    thumbnail: foto_dummy_04,
     category: ["Urban Farming", "Pengomposan"],
     totalModule: 2,
     level: "Pemula",
@@ -130,7 +134,7 @@ export const courseDetailDummyData = [
     rating: 4.9,
     price: "150.000",
     discountPrice: "125.000",
-    thumbnail: foto_dummy_01,
+    thumbnail: foto_dummy_05,
     category: ["Urban Farming", "Aquaponik"],
     totalModule: 2,
     level: "Pemula",

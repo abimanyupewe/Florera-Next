@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import CourseSection from "./components/home/CourseSection";
 import HeaderSlider from "./components/home/HeaderSlider";
 import ProductSection from "./components/home/ProductSection";
@@ -12,6 +13,7 @@ export default function Home() {
         <ProductSection/>
         <CourseSection/>
       </div>
+      <Footer />
     </div>
   );
 }

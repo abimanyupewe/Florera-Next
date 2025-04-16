@@ -15,7 +15,7 @@ const CourseSection = () => {
 
       {/* Desktop Grid  */}
       <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-6 pb-14 w-full">
-        {courses.slice(0, 5).map((course, index) => <CourseCard key={index} course={course} />)}
+        {courses.slice(0, 4).map((course, index) => <CourseCard key={index} course={course} />)}
       </div>
 
       {/* Mobile Carousel */}
