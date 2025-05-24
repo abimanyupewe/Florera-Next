@@ -13,6 +13,7 @@ import duration from "./duration.png";
 import module_icon from "./menu_book.png";
 import cart_icon from "./shopping_cart.png";
 
+
 export const assets = {
   logo,
   menu_icon,
