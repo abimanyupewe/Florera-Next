@@ -100,124 +100,146 @@ const Navbar = () => {
       </Link>
 
       {/* Menu Desktop */}
-      <ul className="hidden sm:flex gap-5 text-sm">
-        {["/", "/collection", "/about", "/blog", "/contact"].map((path, index) => {
-          const labels = ["Home", "Collection", "About", "Blog", "Contact"];
-          const isActive = pathname === path;
+      <ul className="hidden sm:flex gap-5 text-sm mx-auto">
+        {["/", "/collection", "/about", "/blog", "/contact"].map(
+          (path, index) => {
+            const labels = ["Home", "Collection", "About", "Blog", "Contact"];
+            const isActive = pathname === path;
 
-          // Jika path adalah "/collection", tambahkan dropdown
-          if (path === "/collection") {
+            // Jika path adalah "/collection", tambahkan dropdown
+            if (path === "/collection") {
+              return (
+                <div key={index} className="relative" ref={collectionRef}>
+                  <div
+                    onClick={() => {
+                      setIsCollectionOpen(!isCollectionOpen);
+                      setIsRotatedColl(!isRotatedColl);
+                    }}
+                    className="flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-black"
+                  >
+                    <div className="flex items-center">
+                      <p>Collection</p>
+                      <Image
+                        src={assets.arrow_drop_down}
+                        alt="Dropdown Arrow"
+                        className={`w-5 transition-transform duration-300 ${
+                          isRotatedColl ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                    </div>
+                    <hr
+                      className={`w-0 border-none h-[1.5px] bg-black transition-all duration-500 ${
+                        isActive ? "w-2/4" : "w-0"
+                      }`}
+                    />
+                  </div>
+                  {/* Dropdown Menu */}
+                  {isCollectionOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-50 transition-all duration-300">
+                      <Link
+                        href="/all-products"
+                        onClick={() => {
+                          setIsCollectionOpen(false);
+                          setIsRotatedColl(false);
+                        }}
+                      >
+                        <p className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                          Products
+                        </p>
+                      </Link>
+                      <Link
+                        href="/all-courses"
+                        onClick={() => {
+                          setIsCollectionOpen(false);
+                          setIsRotatedColl(false);
+                        }}
+                      >
+                        <p className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
+                          Courses
+                        </p>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            // Jika path adalah "/about", tambahkan dropdown
+            if (path === "/about") {
+              return isAboutPage ? (
+                // Tampilkan dropdown hanya di halaman About
+                <div key={index} className="relative">
+                  <div
+                    onClick={() => setIsAboutOpen(!isAboutOpen)}
+                    className="flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-black"
+                  >
+                    <div className="flex items-center">
+                      <p>About</p>
+                      <Image
+                        src={assets.arrow_drop_down}
+                        alt="Dropdown Arrow"
+                        className={`w-5 transition-transform duration-300 ${
+                          isAboutOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
+                    </div>
+                    <hr
+                      className={`w-0 border-none h-[1.5px] bg-black transition-all duration-500 ${
+                        isAboutPage ? "w-2/4" : "w-0"
+                      }`}
+                    />
+                  </div>
+
+                  {isAboutOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-50">
+                      <ScrollLink
+                        to="project"
+                        smooth={true}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                        onClick={() => {
+                          setIsCollectionMobileOpen(false);
+                          setIsRotatedMobile(false);
+                        }}
+                      >
+                        Our Team
+                      </ScrollLink>
+                      <ScrollLink
+                        to="project"
+                        smooth={true}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                        onClick={() => {
+                          setIsCollectionMobileOpen(false);
+                          setIsRotatedMobile(false);
+                        }}
+                      >
+                        Our Mission
+                      </ScrollLink>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                // Tampilkan sebagai navigasi biasa di halaman lain
+                <Link key={index} href={path}>
+                  <div className="flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-black">
+                    <p
+                      className={`transition-all duration-500 hover:text-black ${
+                        isActive ? "text-black" : "text-gray-400"
+                      }`}
+                    >
+                      {labels[index]}
+                    </p>
+                    <hr
+                      className={`w-0 border-none h-[1.5px] bg-black transition-all duration-500 ${
+                        isActive ? "w-2/4" : "w-0"
+                      }`}
+                    />
+                  </div>
+                </Link>
+              );
+            }
+
+            // Untuk path lainnya
             return (
-              <div key={index} className="relative" ref={collectionRef}>
-                <div
-                  onClick={() => {
-                    setIsCollectionOpen(!isCollectionOpen);
-                    setIsRotatedColl(!isRotatedColl);
-                  }}
-                  className="flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-black"
-                >
-                  <div className="flex items-center">
-                    <p>Collection</p>
-                    <Image
-                      src={assets.arrow_drop_down}
-                      alt="Dropdown Arrow"
-                      className={`w-5 transition-transform duration-300 ${
-                        isRotatedColl ? "rotate-180" : "rotate-0"
-                      }`}
-                    />
-                  </div>
-                  <hr
-                    className={`w-0 border-none h-[1.5px] bg-black transition-all duration-500 ${
-                      isActive ? "w-2/4" : "w-0"
-                    }`}
-                  />
-                </div>
-                {/* Dropdown Menu */}
-                {isCollectionOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-50 transition-all duration-300">
-                    <Link
-                      href="/all-products"
-                      onClick={() => {
-                        setIsCollectionOpen(false);
-                        setIsRotatedColl(false);
-                      }}
-                    >
-                      <p className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-                        Products
-                      </p>
-                    </Link>
-                    <Link
-                      href="/all-courses"
-                      onClick={() => {
-                        setIsCollectionOpen(false);
-                        setIsRotatedColl(false);
-                      }}
-                    >
-                      <p className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-                        Courses
-                      </p>
-                    </Link>
-                  </div>
-                )}
-              </div>
-            );
-          }
-
-          // Jika path adalah "/about", tambahkan dropdown
-          if (path === "/about") {
-            return isAboutPage ? (
-              // Tampilkan dropdown hanya di halaman About
-              <div key={index} className="relative">
-                <div
-                  onClick={() => setIsAboutOpen(!isAboutOpen)}
-                  className="flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-black"
-                >
-                  <div className="flex items-center">
-                    <p>About</p>
-                    <Image
-                      src={assets.arrow_drop_down}
-                      alt="Dropdown Arrow"
-                      className={`w-5 transition-transform duration-300 ${
-                        isAboutOpen ? "rotate-180" : "rotate-0"
-                      }`}
-                    />
-                  </div>
-                  <hr
-                    className={`w-0 border-none h-[1.5px] bg-black transition-all duration-500 ${
-                      isAboutPage ? "w-2/4" : "w-0"
-                    }`}
-                  />
-                </div>
-
-                {isAboutOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-50">
-                    <ScrollLink
-                      to="project"
-                      smooth={true}
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => {
-                        setIsCollectionMobileOpen(false);
-                        setIsRotatedMobile(false);
-                      }}
-                    >
-                      Our Team
-                    </ScrollLink>
-                    <ScrollLink
-                      to="project"
-                      smooth={true}
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => {
-                        setIsCollectionMobileOpen(false);
-                        setIsRotatedMobile(false);
-                      }}
-                    >
-                      Our Mission
-                    </ScrollLink>
-                  </div>
-                )}
-              </div>
-            ) : (
-              // Tampilkan sebagai navigasi biasa di halaman lain
               <Link key={index} href={path}>
                 <div className="flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-black">
                   <p
@@ -236,41 +258,13 @@ const Navbar = () => {
               </Link>
             );
           }
-
-          // Untuk path lainnya
-          return (
-            <Link key={index} href={path}>
-              <div className="flex flex-col items-center gap-1 cursor-pointer text-gray-400 hover:text-black">
-                <p
-                  className={`transition-all duration-500 hover:text-black ${
-                    isActive ? "text-black" : "text-gray-400"
-                  }`}
-                >
-                  {labels[index]}
-                </p>
-                <hr
-                  className={`w-0 border-none h-[1.5px] bg-black transition-all duration-500 ${
-                    isActive ? "w-2/4" : "w-0"
-                  }`}
-                />
-              </div>
-            </Link>
-          );
-        })}
+        )}
       </ul>
+
+      <a className="py-2 px-4 bg-greenPrimary text-white rounded-md cursor-pointer" href="/admin">Tes admin123</a>
 
       {/* Tombol Menu Mobile */}
       <div className="flex items-center gap-6">
-        <div className="flex items-center md:hidden gap-3">
-          {isSeller && (
-            <button
-              onClick={() => router.push("/seller")}
-              className="text-xs bg-emerald-600 text-white px-4 py-2 rounded-sm"
-            >
-              Admin Dashboard
-            </button>
-          )}
-        </div>
         <Image
           onClick={() => setVisible(true)}
           src={assets.menu_icon}
@@ -295,7 +289,14 @@ const Navbar = () => {
           </div>
           {["/", "/collection", "/shop", "/about", "/blog", "/contact"].map(
             (path, index) => {
-              const labels = ["Home", "Collection", "Shop", "About", "Blog", "Contact"];
+              const labels = [
+                "Home",
+                "Collection",
+                "Shop",
+                "About",
+                "Blog",
+                "Contact",
+              ];
               const isActive = pathname === path;
 
               if (path === "/collection") {
@@ -437,14 +438,6 @@ const Navbar = () => {
 
       {/* Tombol Desktop */}
       <div className="hidden md:flex items-center gap-4">
-        {isSeller && (
-          <button
-            onClick={() => router.push("/seller")}
-            className="text-xs bg-emerald-600 text-white px-4 py-2 rounded-sm"
-          >
-            Seller Dashboard
-          </button>
-        )}
         <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
         <button className="flex items-center gap-2 hover:text-gray-900 transition">
           <Image src={assets.user_icon} alt="user icon" className="w-4 h-4" />
