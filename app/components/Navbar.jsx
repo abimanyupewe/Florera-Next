@@ -261,8 +261,6 @@ const Navbar = () => {
         )}
       </ul>
 
-      <a className="py-2 px-4 bg-greenPrimary text-white rounded-md cursor-pointer" href="/admin">Tes admin123</a>
-
       {/* Tombol Menu Mobile */}
       <div className="flex items-center gap-6">
         <Image

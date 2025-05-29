@@ -13,7 +13,7 @@ const ProductSection = () => {
 
       {/* Desktop Grid  */}
       <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-6 pb-14 w-full">
-        {products.slice(0, 4).map((product, index) => (
+        {products.slice(0, 5).map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
       </div>

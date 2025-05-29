@@ -36,74 +36,80 @@ const VisiSection = () => {
   };
 
   return (
-    <div className="w-full">
-      <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-white md:p-20 p-8 gap-8 md:gap-0">
-        <div className="w-full md:w-1/2 justify-center items-center p-10">
-          <h1 className="text-4xl font-bold text-center">Visi Kami</h1>
-          <p className="mt-4 text-center">
-            Menjadi platform terdepan untuk komunitas pecinta tanaman hias di
-            Indonesia, yang mengedukasi dan memfasilitasi setiap orang untuk
-            berkebun dengan cara yang menyenangkan dan berkelanjutan.
-          </p>
+    <section className="w-full bg-white min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-16 gap-12 md:gap-24">
+      {/* Visi Kami */}
+      <div className="w-full md:w-1/2 p-8 md:p-12 bg-green-50 rounded-lg shadow-md flex flex-col items-center text-center md:text-left">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-green-800 mb-6">
+          Visi Kami
+        </h2>
+        <p className="text-gray-700 text-lg leading-relaxed max-w-md">
+          Menjadi platform terdepan untuk komunitas pecinta tanaman hias di
+          Indonesia, yang mengedukasi dan memfasilitasi setiap orang untuk
+          berkebun dengan cara yang menyenangkan dan berkelanjutan.
+        </p>
+      </div>
+
+      {/* Misi Kami */}
+      <div className="w-full md:w-1/2 p-8 md:p-12 bg-white rounded-lg shadow-md flex flex-col items-center max-w-lg">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          Misi Kami
+        </h2>
+
+        {/* Slider Container */}
+        <div className="relative w-full h-24 flex items-center justify-center overflow-hidden">
+          {Misi.map((misi, index) => (
+            <div
+              key={misi.id}
+              className={`absolute w-full px-6 text-center transition-all duration-700 ease-in-out ${
+                index === currentSlide
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6 pointer-events-none"
+              }`}
+            >
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                {misi.text}
+              </p>
+            </div>
+          ))}
         </div>
-        <div className="w-full md:w-1/2 flex flex-col p-4 md:p-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-center justify-center mb-4 md:mb-6">
-            Misi Kami
-          </h1>
-          <div className="relative h-10 w-full max-w-md flex items-center justify-center">
-            {Misi.map((misi, index) => (
-              <div
-                key={misi.id}
-                className={`absolute transition-all duration-500 ease-in-out text-center px-4 ${
-                  index === currentSlide
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-4"
-                }`}
-              >
-                <p className="text-base md:text-lg">{misi.text}</p>
-              </div>
-            ))}
-          </div>
 
-          {/* Slider Indicators */}
-          <div className="flex gap-2 mt-6 justify-center">
-            {Misi.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors cursor-pointer ${
-                  index === currentSlide ? "bg-greenPrimary" : "bg-gray-300 hover:bg-green-400"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+        {/* Slider Indicators */}
+        <div className="flex gap-3 mt-8">
+          {Misi.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                index === currentSlide
+                  ? "bg-greenPrimary"
+                  : "bg-gray-300 hover:bg-emerald-500 cursor-pointer"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
-          <div className="flex justify-center mt-4">
-            <button
-              onClick={() =>
-                setCurrentSlide(
-                  (prev) => (prev - 1 + Misi.length) % Misi.length
-                )
-              }
-              className="px-4 py-2 bg-greenPrimary hover:bg-emerald-600 rounded-l cursor-pointer"
-              aria-label="Previous slide"
-            >
-              <p className="text-white">Prev</p>
-            </button>
-            <button
-              onClick={() =>
-                setCurrentSlide((prev) => (prev + 1) % Misi.length)
-              }
-              className="px-4 py-2 bg-greenPrimary hover:bg-emerald-600 rounded-r cursor-pointer"
-              aria-label="Next slide"
-            >
-              <p className="text-white">Next</p>
-            </button>
-          </div>
+        {/* Navigation Buttons */}
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() =>
+              setCurrentSlide((prev) => (prev - 1 + Misi.length) % Misi.length)
+            }
+            className="px-4 py-2 bg-greenPrimary hover:bg-emerald-600 rounded-l cursor-pointer"
+            aria-label="Previous slide"
+          >
+            <p className="text-white">Prev</p>
+          </button>
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % Misi.length)}
+            className="px-4 py-2 bg-greenPrimary hover:bg-emerald-600 rounded-r cursor-pointer"
+            aria-label="Next slide"
+          >
+            <p className="text-white">Next</p>
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

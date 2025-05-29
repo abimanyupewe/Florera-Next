@@ -9,7 +9,7 @@ const DashboardAdmin = () => {
     { label: "Pengguna", value: 85, icon: "👥" },
   ];
 
-  // Data dummy untuk pesanan terbaru
+  // Data dummy pesanan terbaru
   const recentOrders = [
     { id: "ORD001", customer: "Budi Santoso", date: "2025-05-20", status: "Selesai", total: 150000 },
     { id: "ORD002", customer: "Sari Dewi", date: "2025-05-21", status: "Diproses", total: 75000 },

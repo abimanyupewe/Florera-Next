@@ -12,7 +12,7 @@ const HeaderSlider = () => {
       offer: "Pelajari teknik compact gardening dari ahli",
       buttonText1: "Check now",
       buttonText2: "Find more",
-      // imgSrc: assets.header_headphone_image,
+      imgSrc: assets.farm1,
     },
     {
       id: 2,

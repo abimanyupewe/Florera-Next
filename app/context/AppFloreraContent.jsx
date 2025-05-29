@@ -1,6 +1,9 @@
 "use client"
+import { blogAssets } from '@/assets/blog/blogAssets'
 import { courseDetailDummyData } from '@/assets/course/dataCourse'
+import { documentationData } from '@/assets/documentation/docAssets'
 import { productsCard, productsDetailDummyData } from '@/assets/product/dataProducts'
+import { teamAssets } from '@/assets/teams/teamAssets'
 import { useRouter } from 'next/navigation'
 import { createContext, useContext, useEffect, useState } from 'react'
 
@@ -18,6 +21,9 @@ export const AppFloreraContentProvider = (props) => {
     const [isSeller, setIsSeller] = useState(true)
     const [products, setProducts] = useState([])
     const [courses, setCourses] = useState([])
+    const [teams, setTeams] = useState([])
+    const [documentations, setDocumentation] = useState([])
+    const [blogs, setBlogs] = useState([])
 
     const fetchProductData = async () => {
         setProducts(productsDetailDummyData)
@@ -31,6 +37,18 @@ export const AppFloreraContentProvider = (props) => {
         setCourses(courseDetailDummyData)
     }
 
+    const fetchTeamData = async () => {
+        setTeams(teamAssets)
+    }
+
+    const fetchDocumentationData = async () => {
+        setDocumentation(documentationData)
+    }
+
+    const fetchBlogData = async () => {
+        setBlogs(blogAssets)
+    }
+
     useEffect(() => {
         fetchProductData()
     }, [])
@@ -39,6 +57,18 @@ export const AppFloreraContentProvider = (props) => {
         fetchCourseData()
     },[])
 
+    useEffect(() => {
+        fetchTeamData()
+    }, [])
+
+    useEffect(() => {
+        fetchDocumentationData()
+    }, [])
+
+    useEffect(() => {
+        fetchBlogData()
+    }, [])
+
     // useEffect(() => {
     //     fetchUserData()
     // }, [])
@@ -46,7 +76,10 @@ export const AppFloreraContentProvider = (props) => {
     const value = {
         currency, currencySymbol, router,
         isSeller, setIsSeller, products, setProducts, 
-        fetchProductData, courses, setCourses, fetchCourseData,
+        fetchProductData, courses, setCourses, fetchCourseData, 
+        teams, setTeams, fetchTeamData,
+        documentations, setDocumentation, fetchDocumentationData,
+        blogs, setBlogs, fetchBlogData,
     }
 
     return (
