@@ -1,66 +1,170 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FiHome,
   FiBox,
   FiBookOpen,
+  FiMessageCircle,
   FiShoppingCart,
+  FiImage,
+  FiFileText,
+  FiFile,
   FiUsers,
-  FiSettings,
+  FiUser,
+  FiUserCheck,
+  FiUserPlus,
   FiChevronLeft,
   FiChevronRight,
+  FiChevronDown,
+  FiChevronUp,
 } from "react-icons/fi";
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
-  const menuItems = [
-    { label: "Dashboard", href: "/admin", icon: <FiHome size={20} /> },
-    {
-      label: "Produk Berkebun",
-      href: "/admin/products",
-      icon: <FiBox size={20} />,
-    },
-    {
-      label: "Kursus Berkebun",
-      href: "/admin/courses",
-      icon: <FiBookOpen size={20} />,
-    },
-    {
-      label: "Pesanan",
-      href: "/admin/orders",
-      icon: <FiShoppingCart size={20} />,
-    },
-    { label: "Pengguna", href: "/admin/users", icon: <FiUsers size={20} /> },
-    {
-      label: "Pengaturan",
-      href: "/admin/settings",
-      icon: <FiSettings size={20} />,
-    },
-  ];
-
   const pathname = usePathname();
 
-  // Close sidebar
+  // State untuk menyimpan menu yang sedang dibuka (accordion)
+  const [openMenus, setOpenMenus] = useState({});
+
+  // Fungsi toggle accordion menu
+  const toggleMenu = (menuKey) => {
+    setOpenMenus((prev) => ({
+      ...prev,
+      [menuKey]: !prev[menuKey],
+    }));
+  };
+
+  // Close sidebar on route change (mobile)
   useEffect(() => {
     setSidebarOpen(false);
   }, [pathname, setSidebarOpen]);
+
+  // Data menu dengan struktur lengkap
+  const menuStructure = [
+    {
+      label: "Main Menu",
+      isLabel: true,
+    },
+    {
+      label: "Dashboard",
+      href: "/admin",
+      icon: <FiHome size={20} />,
+    },
+    {
+      label: "Produk",
+      icon: <FiBox size={20} />,
+      subMenu: [
+        { label: "List Produk", href: "/admin/products/list" },
+        { label: "Add Product", href: "/admin/products/add" },
+      ],
+    },
+    {
+      label: "Kursus",
+      icon: <FiBookOpen size={20} />,
+      subMenu: [
+        { label: "List Course", href: "/admin/courses/list" },
+        { label: "Add Course", href: "/admin/courses/add" },
+      ],
+    },
+    {
+      label: "Message",
+      href: "/admin/messages",
+      icon: <FiMessageCircle size={20} />,
+    },
+    {
+      label: "Pesanan",
+      icon: <FiShoppingCart size={20} />,
+      subMenu: [
+        { label: "List Pesanan", href: "/admin/orders/list" },
+        { label: "Status Pesanan", href: "/admin/orders/status" },
+        { label: "Add Pesanan", href: "/admin/orders/add" },
+      ],
+    },
+
+    {
+      label: "Post",
+      isLabel: true,
+    },
+    {
+      label: "Banner",
+      icon: <FiImage size={20} />,
+      subMenu: [
+        { label: "List Banner", href: "/admin/banner/list" },
+        { label: "Add Banner", href: "/admin/banner/add" },
+      ],
+    },
+    {
+      label: "Dokumentasi",
+      icon: <FiFileText size={20} />,
+      subMenu: [
+        { label: "List Dokumentasi", href: "/admin/documentation/list" },
+        { label: "Add Dokumentasi", href: "/admin/documentation/add" },
+      ],
+    },
+    {
+      label: "Blog",
+      icon: <FiFile size={20} />,
+      subMenu: [
+        { label: "List Blog", href: "/admin/blog/list" },
+        { label: "Add Blog", href: "/admin/blog/add" },
+      ],
+    },
+    {
+      label: "Team",
+      icon: <FiUsers size={20} />,
+      subMenu: [
+        { label: "List Team", href: "/admin/team/list" },
+        { label: "Add Team", href: "/admin/team/add" },
+      ],
+    },
+
+    {
+      label: "Account Management",
+      isLabel: true,
+    },
+    {
+      label: "Pengguna",
+      icon: <FiUser size={20} />,
+      subMenu: [
+        { label: "List Pengguna", href: "/admin/users/list" },
+        { label: "Add Pengguna", href: "/admin/users/add" },
+      ],
+    },
+    {
+      label: "Mentor",
+      icon: <FiUserCheck size={20} />,
+      subMenu: [
+        { label: "List Mentor", href: "/admin/mentors/list" },
+        { label: "Add Mentor", href: "/admin/mentors/add" },
+      ],
+    },
+    {
+      label: "Seller",
+      icon: <FiUserPlus size={20} />,
+      subMenu: [
+        { label: "List Seller", href: "/admin/sellers/list" },
+        { label: "Add Seller", href: "/admin/sellers/add" },
+      ],
+    },
+  ];
 
   return (
     <>
       <aside
         className={`
-          fixed top-0 left-0 h-full bg-greenPrimary text-green-100 z-50
+          fixed top-0 left-0 h-full bg-white z-50
           transform transition-transform duration-300 ease-in-out
           md:translate-x-0
-          ${minimized ? "w-20" : "w-60"}
+          ${minimized ? "w-20" : "w-64"}
           flex flex-col
+          border-r border-gray-200
         `}
         aria-label="Sidebar"
       >
         {/* Header Sidebar */}
-        <div className="flex items-center justify-between px-4 py-4 border-b border-green-800">
+        <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
           <h1
-            className={`text-xl font-bold whitespace-nowrap ${
+            className={`text-xl font-bold whitespace-nowrap text-black ${
               minimized ? "hidden" : "block"
             }`}
           >
@@ -70,36 +174,106 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
           {/* Tombol minimize sidebar desktop */}
           <button
             onClick={() => setMinimized(!minimized)}
-            className="p-1 rounded-md hover:bg-green-700 focus:outline-none"
+            className="p-1 rounded-md hover:bg-green-100 focus:outline-none"
             aria-label={minimized ? "Perluas sidebar" : "Perkecil sidebar"}
           >
-            {minimized ? (
-              <FiChevronRight size={20} />
-            ) : (
-              <FiChevronLeft size={20} />
-            )}
+            {minimized ? <FiChevronRight size={20} /> : <FiChevronLeft size={20} />}
           </button>
         </div>
 
         {/* Menu */}
-        <nav className="flex-1 overflow-y-auto mt-4">
+        <nav className="flex-1 overflow-y-auto mt-2">
           <ul className="flex flex-col gap-1 px-2">
-            {menuItems.map(({ label, icon, href }) => {
-              const isActive = pathname === href;
-              return (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className={`
-                      flex items-center gap-3 px-3 py-2 rounded-md hover:bg-emerald-500 transition-colors
-                      ${isActive ? "bg-emerald-500 font-semibold" : ""}
-                      ${minimized ? "justify-center" : ""}
-                    `}
-                    onClick={() => setSidebarOpen(false)} // Tutup sidebar di mobile saat klik menu
+            {menuStructure.map((item, idx) => {
+              if (item.isLabel) {
+                // Render label section
+                return (
+                  <li
+                    key={`label-${idx}`}
+                    className={`px-3 py-2 text-gray-500 font-semibold uppercase tracking-wide ${
+                      minimized ? "hidden" : "block"
+                    }`}
                   >
-                    <span className="text-lg">{icon}</span>
-                    {!minimized && <span>{label}</span>}
-                  </Link>
+                    {item.label}
+                  </li>
+                );
+              }
+
+              const isActive = pathname === item.href;
+              const hasSubMenu = Array.isArray(item.subMenu);
+              const isOpen = openMenus[item.label];
+
+              return (
+                <li key={item.label} className="relative">
+                  {/* Menu induk */}
+                  <div
+                    className={`
+                      flex items-center cursor-pointer select-none
+                      ${minimized ? "justify-center py-4" : "gap-3 px-3 py-2 rounded-md"}
+                      ${
+                        isActive && !hasSubMenu
+                          ? "bg-green-50 text-green-600 font-semibold border-l-4 border-green-500"
+                          : "text-gray-600 hover:bg-green-100 hover:text-green-600"
+                      }
+                      transition-colors duration-300
+                    `}
+                    onClick={() => {
+                      if (hasSubMenu) {
+                        toggleMenu(item.label);
+                      } else {
+                        // Jika tidak ada submenu, close sidebar di mobile
+                        setSidebarOpen(false);
+                      }
+                    }}
+                  >
+                    <span className="text-lg">{item.icon}</span>
+                    {!minimized && <span className="flex-1">{item.label}</span>}
+
+                    {/* Icon dropdown */}
+                    {!minimized && hasSubMenu && (
+                      <span className="text-green-600">
+                        {isOpen ? <FiChevronUp size={18} /> : <FiChevronDown size={18} />}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Sub-menu */}
+                  {hasSubMenu && isOpen && !minimized && (
+                    <ul className="pl-10 mt-1 flex flex-col gap-1">
+                      {item.subMenu.map(({ label: subLabel, href: subHref }) => {
+                        const isSubActive = pathname === subHref;
+                        return (
+                          <li key={subHref}>
+                            <Link
+                              href={subHref}
+                              className={`
+                                block px-3 py-2 rounded-md
+                                ${
+                                  isSubActive
+                                    ? "bg-green-100 text-green-600 font-semibold"
+                                    : "text-gray-600 hover:bg-green-50 hover:text-green-600"
+                                }
+                                transition-colors duration-300
+                              `}
+                              onClick={() => setSidebarOpen(false)}
+                            >
+                              {subLabel}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+
+                  {/* Jika menu tanpa submenu dan minimized, buat Link */}
+                  {!hasSubMenu && (
+                    <Link
+                      href={item.href}
+                      className="absolute inset-0"
+                      aria-label={item.label}
+                      onClick={() => setSidebarOpen(false)}
+                    />
+                  )}
                 </li>
               );
             })}
@@ -108,9 +282,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
 
         {/* Footer */}
         <div
-          className={`px-4 py-3 border-t border-green-800 text-sm text-green-300 ${
+          className={`px-4 py-3 text-sm text-gray-400 ${
             minimized ? "hidden" : "block"
-          }`}
+          } border-t border-gray-200`}
         >
           &copy; 2025 Florera
         </div>
