@@ -26,10 +26,31 @@ const TransaksiSection = () => {
     },
     {
       id: "ORD004",
-      customer: "Rina Kurnia",
-      date: "2025-05-23",
-      status: "Batal",
-      total: 0,
+      customer: "Agus Wijaya",
+      date: "2025-05-22",
+      status: "Dikirim",
+      total: 200000,
+    },
+    {
+      id: "ORD005",
+      customer: "Agus Wijaya",
+      date: "2025-05-22",
+      status: "Dikirim",
+      total: 200000,
+    },
+    {
+      id: "ORD006",
+      customer: "Agus Wijaya",
+      date: "2025-05-22",
+      status: "Dikirim",
+      total: 200000,
+    },
+    {
+      id: "ORD007",
+      customer: "Agus Wijaya",
+      date: "2025-05-22",
+      status: "Dikirim",
+      total: 200000,
     },
   ];
 
@@ -51,14 +72,14 @@ const TransaksiSection = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <h2 className="text-xl font-semibold mb-4 text-gray-900">
+    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 max-h-[15rem] flex flex-col">
+      <h2 className="text-xl font-semibold text-gray-700 flex-shrink-0">
         Pesanan Terbaru
       </h2>
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-gray-700">
-          <thead>
-            <tr className="border-b border-gray-300">
+      <div className="overflow-x-auto flex-grow overflow-y-auto">
+        <table className="w-full text-left text-gray-700 border-collapse">
+          <thead className="sticky top-0 bg-white z-10 border-b border-gray-300">
+            <tr>
               <th className="py-2 px-3">ID Pesanan</th>
               <th className="py-2 px-3">Pelanggan</th>
               <th className="py-2 px-3">Tanggal</th>
@@ -67,30 +88,34 @@ const TransaksiSection = () => {
             </tr>
           </thead>
           <tbody>
-            {recentOrders.map(({ id, customer, date, status, total }) => (
-              <tr
-                key={id}
-                className="border-b border-gray-100 hover:bg-gray-50"
-              >
-                <td className="py-2 px-3 font-mono text-sm">{id}</td>
-                <td className="py-2 px-3">{customer}</td>
-                <td className="py-2 px-3">
-                  {new Date(date).toLocaleDateString("id-ID")}
-                </td>
-                <td className="py-2 px-3">
-                  <span
-                    className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                      statusColors[status] || "bg-gray-100 text-gray-800"
-                    }`}
-                  >
-                    {status}
-                  </span>
-                </td>
-                <td className="py-2 px-3 text-right font-semibold">
-                  {formatRupiah(total)}
-                </td>
-              </tr>
-            ))}
+            {recentOrders.map(
+              ({ id, customer, date, status, total }, index) => (
+                <tr
+                  key={id}
+                  className={`${
+                    index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                  } hover:bg-gray-100 border-b border-gray-100`}
+                >
+                  <td className="py-2 px-3 font-mono text-sm">{id}</td>
+                  <td className="py-2 px-3">{customer}</td>
+                  <td className="py-2 px-3">
+                    {new Date(date).toLocaleDateString("id-ID")}
+                  </td>
+                  <td className="py-2 px-3">
+                    <span
+                      className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                        statusColors[status] || "bg-gray-100 text-gray-800"
+                      }`}
+                    >
+                      {status}
+                    </span>
+                  </td>
+                  <td className="py-2 px-3 text-right font-semibold">
+                    {formatRupiah(total)}
+                  </td>
+                </tr>
+              )
+            )}
           </tbody>
         </table>
       </div>

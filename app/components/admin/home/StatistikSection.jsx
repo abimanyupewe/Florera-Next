@@ -10,11 +10,11 @@ const StatistikSection = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-2 lg:grid-cols-2">
       {stats.map(({ label, value, icon }) => (
         <div
           key={label}
-          className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200"
+          className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200 h-28"
         >
           <div className="text-3xl">{icon}</div>
           <div>

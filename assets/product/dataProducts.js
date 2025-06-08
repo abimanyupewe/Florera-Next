@@ -7,17 +7,6 @@ import alatkebun1 from './alat_kebun1.jpg'
 import alat_penyiram from './botolspray1500ml.jpg'
 import bibit_sawi from './sawi.jpg'                                                                                                                                                                                                                                                                           
 
-export const productsCard = [
-  {
-    id: 1,
-    name: "Pupuk 250 ml",
-    description: "Noise-cancellation, 40-hour battery",
-    rating: 4.5,
-    price: "20.000",
-    imgSrc: pupuk_250ml,
-  },
-];
-
 export const productsDetailDummyData = [
   {
     "_id": "67a1f4e43f34a77b6dde9144",

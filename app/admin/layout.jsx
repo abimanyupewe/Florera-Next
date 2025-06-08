@@ -33,7 +33,7 @@ const LayoutAdmin = ({ children }) => {
           setSidebarOpen={setSidebarOpen}
           minimized={sidebarMinimized}
         />
-        <main className="flex-1 overflow-y-auto p-6 bg-gray-100 pt-20">
+        <main className="flex-1 overflow-y-auto p-4 bg-gray-100 pt-20">
           {children}
         </main>
       </div>

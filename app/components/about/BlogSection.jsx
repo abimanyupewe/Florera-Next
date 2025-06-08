@@ -24,7 +24,7 @@ const BlogSection = () => {
         </div>
 
         {/* Blog Grid */}
-        <div className="hidden md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.slice(0, 3).map((blog, index) => (
             <BlogCard key={index} blog={blog} />
           ))}

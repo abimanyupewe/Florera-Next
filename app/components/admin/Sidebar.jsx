@@ -54,30 +54,30 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
       label: "Produk",
       icon: <FiBox size={20} />,
       subMenu: [
-        { label: "List Produk", href: "/admin/products/list" },
-        { label: "Add Product", href: "/admin/products/add" },
+        { label: "List Produk", href: "/admin/main/products/list" },
+        { label: "Add Product", href: "/admin/main/products/add" },
       ],
     },
     {
       label: "Kursus",
       icon: <FiBookOpen size={20} />,
       subMenu: [
-        { label: "List Course", href: "/admin/courses/list" },
-        { label: "Add Course", href: "/admin/courses/add" },
+        { label: "List Course", href: "/admin/main/courses/list" },
+        { label: "Add Course", href: "/admin/main/courses/add" },
       ],
     },
     {
       label: "Message",
-      href: "/admin/messages",
+      href: "/admin/main/messages",
       icon: <FiMessageCircle size={20} />,
     },
     {
       label: "Pesanan",
       icon: <FiShoppingCart size={20} />,
       subMenu: [
-        { label: "List Pesanan", href: "/admin/orders/list" },
-        { label: "Status Pesanan", href: "/admin/orders/status" },
-        { label: "Add Pesanan", href: "/admin/orders/add" },
+        { label: "List Pesanan", href: "/admin/main/orders/list" },
+        { label: "Status Pesanan", href: "/admin/main/orders/status" },
+        { label: "Add Pesanan", href: "/admin/main/orders/add" },
       ],
     },
 
@@ -89,32 +89,32 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
       label: "Banner",
       icon: <FiImage size={20} />,
       subMenu: [
-        { label: "List Banner", href: "/admin/banner/list" },
-        { label: "Add Banner", href: "/admin/banner/add" },
+        { label: "List Banner", href: "/admin/post/banner/list" },
+        { label: "Add Banner", href: "/admin/post/banner/add" },
       ],
     },
     {
       label: "Dokumentasi",
       icon: <FiFileText size={20} />,
       subMenu: [
-        { label: "List Dokumentasi", href: "/admin/documentation/list" },
-        { label: "Add Dokumentasi", href: "/admin/documentation/add" },
+        { label: "List Dokumentasi", href: "/admin/post/documentation/list" },
+        { label: "Add Dokumentasi", href: "/admin/post/documentation/add" },
       ],
     },
     {
       label: "Blog",
       icon: <FiFile size={20} />,
       subMenu: [
-        { label: "List Blog", href: "/admin/blog/list" },
-        { label: "Add Blog", href: "/admin/blog/add" },
+        { label: "List Blog", href: "/admin/post/blog/list" },
+        { label: "Add Blog", href: "/admin/post/blog/add" },
       ],
     },
     {
       label: "Team",
       icon: <FiUsers size={20} />,
       subMenu: [
-        { label: "List Team", href: "/admin/team/list" },
-        { label: "Add Team", href: "/admin/team/add" },
+        { label: "List Team", href: "/admin/post/team/list" },
+        { label: "Add Team", href: "/admin/post/team/add" },
       ],
     },
 
@@ -126,24 +126,24 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
       label: "Pengguna",
       icon: <FiUser size={20} />,
       subMenu: [
-        { label: "List Pengguna", href: "/admin/users/list" },
-        { label: "Add Pengguna", href: "/admin/users/add" },
+        { label: "List Pengguna", href: "/admin/account/users/list" },
+        { label: "Add Pengguna", href: "/admin/account/users/add" },
       ],
     },
     {
       label: "Mentor",
       icon: <FiUserCheck size={20} />,
       subMenu: [
-        { label: "List Mentor", href: "/admin/mentors/list" },
-        { label: "Add Mentor", href: "/admin/mentors/add" },
+        { label: "List Mentor", href: "/admin/account/mentors/list" },
+        { label: "Add Mentor", href: "/admin/account/mentors/add" },
       ],
     },
     {
       label: "Seller",
       icon: <FiUserPlus size={20} />,
       subMenu: [
-        { label: "List Seller", href: "/admin/sellers/list" },
-        { label: "Add Seller", href: "/admin/sellers/add" },
+        { label: "List Seller", href: "/admin/account/sellers/list" },
+        { label: "Add Seller", href: "/admin/account/sellers/add" },
       ],
     },
   ];
@@ -177,7 +177,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
             className="p-1 rounded-md hover:bg-green-100 focus:outline-none"
             aria-label={minimized ? "Perluas sidebar" : "Perkecil sidebar"}
           >
-            {minimized ? <FiChevronRight size={20} /> : <FiChevronLeft size={20} />}
+            {minimized ? (
+              <FiChevronRight size={20} />
+            ) : (
+              <FiChevronLeft size={20} />
+            )}
           </button>
         </div>
 
@@ -209,7 +213,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
                   <div
                     className={`
                       flex items-center cursor-pointer select-none
-                      ${minimized ? "justify-center py-4" : "gap-3 px-3 py-2 rounded-md"}
+                      ${
+                        minimized
+                          ? "justify-center py-4"
+                          : "gap-3 px-3 py-2 rounded-md"
+                      }
                       ${
                         isActive && !hasSubMenu
                           ? "bg-green-50 text-green-600 font-semibold border-l-4 border-green-500"
@@ -232,7 +240,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
                     {/* Icon dropdown */}
                     {!minimized && hasSubMenu && (
                       <span className="text-green-600">
-                        {isOpen ? <FiChevronUp size={18} /> : <FiChevronDown size={18} />}
+                        {isOpen ? (
+                          <FiChevronUp size={18} />
+                        ) : (
+                          <FiChevronDown size={18} />
+                        )}
                       </span>
                     )}
                   </div>
@@ -240,13 +252,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
                   {/* Sub-menu */}
                   {hasSubMenu && isOpen && !minimized && (
                     <ul className="pl-10 mt-1 flex flex-col gap-1">
-                      {item.subMenu.map(({ label: subLabel, href: subHref }) => {
-                        const isSubActive = pathname === subHref;
-                        return (
-                          <li key={subHref}>
-                            <Link
-                              href={subHref}
-                              className={`
+                      {item.subMenu.map(
+                        ({ label: subLabel, href: subHref }) => {
+                          const isSubActive = pathname === subHref;
+                          return (
+                            <li key={subHref}>
+                              <Link
+                                href={subHref}
+                                className={`
                                 block px-3 py-2 rounded-md
                                 ${
                                   isSubActive
@@ -255,13 +268,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
                                 }
                                 transition-colors duration-300
                               `}
-                              onClick={() => setSidebarOpen(false)}
-                            >
-                              {subLabel}
-                            </Link>
-                          </li>
-                        );
-                      })}
+                                onClick={() => setSidebarOpen(false)}
+                              >
+                                {subLabel}
+                              </Link>
+                            </li>
+                          );
+                        }
+                      )}
                     </ul>
                   )}
 

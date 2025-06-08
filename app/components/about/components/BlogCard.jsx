@@ -1,10 +1,18 @@
+import { useAppFloreraContent } from "@/app/context/AppFloreraContent";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const BlogCard = ({ blog }) => {
+
+  const { router } = useAppFloreraContent();
+
   return (
     <div
+      onClick={() => {
+        router.push("/blog/" + blog._id);
+        scrollTo(0, 0);
+      }}
       className="bg-white rounded-lg overflow-hidden group"
     >
       {/* Blog Image */}
@@ -30,18 +38,13 @@ const BlogCard = ({ blog }) => {
         </div>
 
         <h3 className="text-xl font-semibold text-gray-800 mb-3">
-          <Link
-            href={`/blog/${blog.slug}`}
-            className="hover:text-green-500 transition-colors"
-          >
             {blog.title}
-          </Link>
         </h3>
 
         <p className="text-gray-600 mb-4">{blog.excerpt}</p>
 
         <Link
-          href={`/blog/${blog.slug}`}
+          href={`/blog/${blog._id}`}
           className="inline-flex items-center text-greenPrimary hover:text-green-600 font-medium transition-colors"
         >
           Baca Selengkapnya
