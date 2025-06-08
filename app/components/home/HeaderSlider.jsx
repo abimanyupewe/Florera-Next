@@ -12,11 +12,11 @@ const HeaderSlider = () => {
       offer: "Pelajari teknik compact gardening dari ahli",
       buttonText1: "Check now",
       buttonText2: "Find more",
-      imgSrc: assets.farm1,
+      // imgSrc: assets.farm1,
     },
     {
       id: 2,
-      title: "Investasi Hijau Mulai Hari Ini! Diskon 25% sampai [tanggal]",
+      title: "Investasi Hijau Mulai Hari Ini! Diskon 25% sampai 27 Juni 2024",
       offer: "Waktu Terbatas! Kursus Lengkap Urban Farming dengan harga terbaik",
       buttonText1: "Check Now",
       buttonText2: "Explore Deals",
@@ -24,7 +24,7 @@ const HeaderSlider = () => {
     },
     {
       id: 3,
-      title: "Lorem ipsum dolor sit amet consectetur. 3",
+      title: "Promo terbatas! Dapatkan 40% untuk kursus Urban Farming",
       offer: "Exclusive Deal 40% Off",
       buttonText1: "Order Now",
       buttonText2: "Learn More",
