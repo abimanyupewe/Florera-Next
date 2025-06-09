@@ -39,7 +39,10 @@ const BlogSection = () => {
                   key={index}
                   className="flex-none w-[calc(80%-1rem)] snap-start" // Adjust width as needed
                 >
-                  <BlogCard blog={blog} />
+                  <BlogCard
+                    key={blog.id}
+                    blog={blog}
+                  />
                 </div>
               ))}
             </div>
@@ -58,3 +61,27 @@ const BlogSection = () => {
 };
 
 export default BlogSection;
+
+// "use client";
+
+// import { useAppFloreraContent } from '@/app/context/AppFloreraContent'
+// import BlogCard from './components/BlogCard'
+
+// export default function BlogSection() {
+//   const { blogs } = useAppFloreraContent()
+
+//   if (!blogs || blogs.length === 0) {
+//     return <p>Loading blogs...</p>;
+//   }
+
+//   return (
+//     <div className="container mx-auto p-4">
+//       <h1 className="text-3xl font-bold mb-6">Blog Florera</h1>
+//       <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-4 gap-2">
+//         {blogs.slice(0, 4).map(blog => (
+//           <BlogCard key={blog.id} blog={blog} />
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }

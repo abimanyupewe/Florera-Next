@@ -5,16 +5,8 @@ import React from "react";
 
 const BlogCard = ({ blog }) => {
 
-  const { router } = useAppFloreraContent();
-
   return (
-    <div
-      onClick={() => {
-        router.push("/blog/" + blog._id);
-        scrollTo(0, 0);
-      }}
-      className="bg-white rounded-lg overflow-hidden group"
-    >
+    <div className="bg-white rounded-lg overflow-hidden group">
       {/* Blog Image */}
       <div className="relative h-48 w-full overflow-hidden">
         <Image
@@ -37,14 +29,12 @@ const BlogCard = ({ blog }) => {
           <span>{blog.relase}</span>
         </div>
 
-        <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            {blog.title}
-        </h3>
+        <h3 className="text-xl font-semibold text-gray-800 mb-3">{blog.title}</h3>
 
         <p className="text-gray-600 mb-4">{blog.excerpt}</p>
 
         <Link
-          href={`/blog/${blog._id}`}
+          href={`/blog/${blog.id}`}
           className="inline-flex items-center text-greenPrimary hover:text-green-600 font-medium transition-colors"
         >
           Baca Selengkapnya
@@ -55,12 +45,7 @@ const BlogCard = ({ blog }) => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Link>
       </div>

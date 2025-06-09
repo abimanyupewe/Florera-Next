@@ -1,12 +1,12 @@
-import doc1 from './doc1.jpg';
-import doc2 from './doc2.jpg';
-import doc3 from './doc3.jpg';
-import doc4 from './doc4.jpg';
-import doc5 from './doc5.jpg';
+import doc1 from "./doc1.jpg";
+import doc2 from "./doc2.jpg";
+import doc3 from "./doc3.jpg";
+import doc4 from "./doc4.jpg";
+import doc5 from "./doc5.jpg";
 
 export const blogAssets = [
   {
-    _id: "111",
+    id: "1",
     title: "5 Tips Merawat Tanaman Hias untuk Pemula",
     date: "29 Mei 2025",
     author: {
@@ -40,7 +40,7 @@ export const blogAssets = [
         tip: 3,
         title: "Gunakan Media Tanam yang Tepat",
         description: "Media tanam yang baik membantu akar tanaman berkembang dengan maksimal. Gunakan campuran tanah, kompos, dan bahan organik lainnya yang memungkinkan drainase air baik.",
-        images: ["tip3_1.jpg"]
+        images: [doc1, doc2]
       },
       {
         tip: 4,
@@ -52,14 +52,14 @@ export const blogAssets = [
         tip: 5,
         title: "Perhatikan Serangan Hama dan Penyakit",
         description: "Periksa tanaman secara rutin dan segera tangani jika ditemukan hama seperti kutu daun atau jamur dengan menggunakan insektisida alami atau sabun tanaman.",
-        images: ["tip5_1.jpg", "tip5_2.jpg"]
+        images: [doc1, doc2]
       }
     ],
     comments: [
       {
         id: 101,
         name: "Siti Nurhaliza",
-        date: "30 Mei 2025",
+        date: "2023-12-01T14:30:00Z",
         comment: "Tipsnya sangat membantu, tanaman saya jadi tumbuh lebih subur!",
         likes: 15
       },
@@ -118,7 +118,7 @@ export const blogAssets = [
     coverImage: doc4
   },
   {
-    
+
     _id: 5,
     title: "Tanaman Hias yang Cocok untuk Ruangan Sempit",
     date: "30 Januari 2024",
@@ -128,4 +128,46 @@ export const blogAssets = [
     slug: "tanaman-hias-yang-cocok-untuk-ruangan-sempit",
     coverImage: doc5
   }
+
+  // {
+  //   id: "1",
+  //   title: "Mengenal Urban Farming: Solusi Ruang Terbuka Hijau di Kota",
+  //   subtitle:
+  //     "Bagaimana urban farming membantu menciptakan kota yang lebih hijau dan sehat.",
+  //   author: "Siti Nurhaliza",
+  //   date: "2025-06-01",
+  //   thumbnail: doc1,
+  //   excerpt:
+  //     "Urban farming atau pertanian perkotaan adalah cara inovatif untuk mengoptimalkan ruang terbuka yang terbatas di kota-kota besar...",
+  //   content:
+  //     "Urban farming adalah konsep pertanian yang diterapkan di kawasan perkotaan dengan tujuan menciptakan ruang hijau dan menyediakan hasil panen ... [konten lengkap di sini]",
+  //   tags: ["Urban Farming", "Lingkungan", "Pertanian Berkelanjutan"],
+  // },
+  // {
+  //   id: "2",
+  //   title: "Panduan Lengkap Urban Farming untuk Pemula",
+  //   subtitle: "Langkah praktis memulai urban farming di lahan terbatas kamu.",
+  //   author: "Ahmad Fauzi",
+  //   date: "2025-05-20",
+  //   thumbnail: doc2,
+  //   excerpt:
+  //     "Mulai urban farming tidak sesulit yang dibayangkan. Berikut panduan lengkapnya yang mudah diikuti untuk pemula ...",
+  //   content:
+  //     "Memulai urban farming dimulai dengan memilih tanaman yang sesuai, menyiapkan media tanam, dan memanfaatkan ruang yang ada secara maksimal ... [konten lengkap di sini]",
+  //   tags: ["Tutorial", "Urban Farming", "Pemula"],
+  // },
+  // {
+  //   id: "3",
+  //   title: "Marketplace Florera: Memudahkan Akses Produk Urban Farming",
+  //   subtitle:
+  //     "Fitur terbaru Florera untuk mendukung komunitas urban farming di Malang.",
+  //   author: "Dewi Sartika",
+  //   date: "2025-06-05",
+  //   thumbnail: doc3,
+  //   excerpt:
+  //     "Florera tidak hanya sebagai platform edukasi dan komunitas, tapi juga menyediakan marketplace untuk perlengkapan dan produk urban farming ...",
+  //   content:
+  //     "Marketplace Florera hadir sebagai solusi untuk memudahkan pelaku urban farming mendapatkan kebutuhan mereka dengan cepat dan praktis ... [konten lengkap di sini]",
+  //   tags: ["Marketplace", "Florera", "Urban Farming"],
+  // },
 ];
