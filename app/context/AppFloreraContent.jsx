@@ -70,8 +70,6 @@ export const AppFloreraContentProvider = (props) => {
 
   useEffect(() => {
     fetchBlogData();
-    // Debug output
-    console.log("Blog data loaded:", blogAssets);
   }, []);
 
   // useEffect(() => {

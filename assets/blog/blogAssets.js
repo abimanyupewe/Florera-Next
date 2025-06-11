@@ -1,133 +1,167 @@
-import doc1 from "./doc1.jpg";
+import doc1 from "./doc.jpg";
 import doc2 from "./doc2.jpg";
 import doc3 from "./doc3.jpg";
 import doc4 from "./doc4.jpg";
 import doc5 from "./doc5.jpg";
+import yola from "./Yola.png";
 
 export const blogAssets = [
   {
     id: "1",
     title: "5 Tips Merawat Tanaman Hias untuk Pemula",
-    date: "29 Mei 2025",
+    date: "2023-12-01",
+    relase: "2 minuted ago",
     author: {
-      name: "Admin TanamanHias",
-      email: "admin@tanamanhias.com",
-      profileImage: "admin_profile.jpg"
+      name: "Yola Pratika",
+      about: "Ceo - Florera",
+      profileImage: yola,
     },
+    excerpt: "Tips merawat tanaman hias",
     category: "Tanaman Hias",
     tags: ["tanaman", "hias", "perawatan", "rumah", "pemula"],
     slug: "tips-merawat-tanaman-hias",
     coverImage: doc1,
     seo: {
-      metaTitle: "5 Tips Merawat Tanaman Hias untuk Pemula yang Mudah dan Efektif",
-      metaDescription: "Pelajari 5 tips mudah merawat tanaman hias agar tumbuh subur dan sehat di rumah Anda. Panduan lengkap untuk pemula.",
-      keywords: ["tanaman hias", "perawatan tanaman hias", "tips tanaman hias", "tanaman rumah"]
+      metaTitle:
+        "5 Tips Merawat Tanaman Hias untuk Pemula yang Mudah dan Efektif",
+      metaDescription:
+        "Pelajari 5 tips mudah merawat tanaman hias agar tumbuh subur dan sehat di rumah Anda. Panduan lengkap untuk pemula.",
+      keywords: [
+        "tanaman hias",
+        "perawatan tanaman hias",
+        "tips tanaman hias",
+        "tanaman rumah",
+      ],
     },
     content: [
       {
         tip: 1,
         title: "Pilih Tanaman yang Sesuai dengan Lingkungan",
-        description: "Pastikan Anda memilih tanaman hias yang sesuai dengan kondisi cahaya dan suhu di rumah Anda. Tanaman seperti kaktus dan sukulen cocok untuk ruangan yang terang, sementara tanaman seperti monstera dan lidah mertua cocok untuk tempat yang teduh.",
-        images: [doc1, doc2]
+        description: `Pastikan Anda memilih tanaman hias yang sesuai dengan kondisi cahaya dan suhu di rumah Anda. Tanaman seperti kaktus dan sukulen cocok untuk ruangan yang memiliki pencahayaan terang dan kering, sedangkan tanaman seperti monstera dan lidah mertua lebih cocok untuk area yang teduh dan lembap. 
+    Memperhatikan lingkungan sangat penting agar tanaman bisa tumbuh dengan optimal. Jika Anda meletakkan tanaman yang membutuhkan cahaya rendah pada area yang terlalu terang, daunnya bisa terbakar. Sebaliknya, tanaman yang membutuhkan sinar matahari banyak akan tumbuh lemah jika ditempatkan di tempat gelap.`,
+        images: [],
       },
       {
         tip: 2,
         title: "Siram Tanaman dengan Air Secukupnya",
-        description: "Jangan terlalu sering atau terlalu jarang menyiram tanaman. Cek tingkat kelembaban tanah terlebih dahulu. Sebagai patokan, siram saat tanah mulai kering pada lapisan atas.",
-        images: []
+        description: `Jangan terlalu sering atau terlalu jarang menyiram tanaman. Cek tingkat kelembaban tanah terlebih dahulu. Sebagai patokan, siram saat tanah mulai kering pada lapisan atas.`,
+        images: [],
       },
       {
         tip: 3,
         title: "Gunakan Media Tanam yang Tepat",
-        description: "Media tanam yang baik membantu akar tanaman berkembang dengan maksimal. Gunakan campuran tanah, kompos, dan bahan organik lainnya yang memungkinkan drainase air baik.",
-        images: [doc1, doc2]
+        description: `Media tanam yang baik membantu akar tanaman berkembang dengan maksimal. Gunakan campuran tanah, kompos, dan bahan organik lainnya yang memungkinkan drainase air baik.`,
+        images: [doc1, doc2],
       },
       {
         tip: 4,
         title: "Pemupukan Rutin",
-        description: "Berikan pupuk cair atau pupuk kandang secara berkala, sekitar sekali dalam dua minggu, untuk menjaga nutrisi tanaman tetap terpenuhi.",
-        images: []
+        description: `Berikan pupuk cair atau pupuk kandang secara berkala, sekitar sekali dalam dua minggu, untuk menjaga nutrisi tanaman tetap terpenuhi.`,
+        images: [],
       },
       {
         tip: 5,
         title: "Perhatikan Serangan Hama dan Penyakit",
-        description: "Periksa tanaman secara rutin dan segera tangani jika ditemukan hama seperti kutu daun atau jamur dengan menggunakan insektisida alami atau sabun tanaman.",
-        images: [doc1, doc2]
-      }
+        description: `Tanaman hias rentan terhadap serangan hama seperti kutu daun, tungau, dan jamur yang dapat merusak daun dan batang. Lakukan pemeriksaan secara rutin terutama di bagian bawah daun dan sela-sela batang. 
+    Jika ditemukan hama, segera bersihkan dengan menggunakan sabun tanaman alami atau insektisida organik untuk menghindari penggunaan bahan kimia berbahaya. Menjaga kebersihan lingkungan juga sangat penting untuk mencegah hama masuk.`,
+        images: [doc1, doc2],
+      },
     ],
     comments: [
       {
         id: 101,
         name: "Siti Nurhaliza",
+        image: yola,
         date: "2023-12-01T14:30:00Z",
-        comment: "Tipsnya sangat membantu, tanaman saya jadi tumbuh lebih subur!",
-        likes: 15
+        comment:
+          "Tipsnya sangat membantu, tanaman saya jadi tumbuh lebih subur!",
+        likes: 15,
       },
       {
         id: 102,
         name: "Budi Santoso",
-        date: "31 Mei 2025",
+        image: yola,
+        date: "2023-12-01T14:30:00Z",
         comment: "Informasi lengkap dan mudah dimengerti. Terima kasih!",
-        likes: 8
-      }
+        likes: 8,
+      },
+      {
+        id: 103,
+        name: "Budi Santoso",
+        image: yola,
+        date: "2023-12-01T14:30:00Z",
+        comment: "Informasi lengkap dan mudah dimengerti. Terima kasih!",
+        likes: 8,
+      },
+      {
+        id: 104,
+        name: "Budi Santoso",
+        image: yola,
+        date: "2023-12-01T14:30:00Z",
+        comment: "Informasi lengkap dan mudah dimengerti. Terima kasih!",
+        likes: 8,
+      },
     ],
     relatedPosts: [
       {
         id: 2,
         title: "Cara Memilih Tanaman Hias untuk Ruangan Kecil",
         slug: "cara-memilih-tanaman-hias-ruangan-kecil",
-        date: "15 Mei 2025"
+        date: "2023-12-01T14:30:00Z",
       },
       {
         id: 3,
         title: "Jenis Tanaman Hias yang Cocok di Iklim Tropis",
         slug: "jenis-tanaman-hias-iklim-tropis",
-        date: "20 Mei 2025"
-      }
-    ]
+        date: "2023-12-01T14:30:00Z",
+      },
+    ],
   },
 
   {
     _id: 2,
     title: "Tips Berkebun di Rumah",
     date: "15 Januari 2024",
-    relase : "2 minuted ago",
-    excerpt: "Berbagai tips dan trik untuk memulai berkebun di rumah, bahkan di lahan terbatas.",
+    relase: "2 minuted ago",
+    excerpt:
+      "Berbagai tips dan trik untuk memulai berkebun di rumah, bahkan di lahan terbatas.",
     category: "Berkebun",
     slug: "tips-berkebun-di-rumah",
-    coverImage: doc2
+    coverImage: doc2,
   },
   {
     _id: 3,
     title: "Manfaat Tanaman untuk Kesehatan",
     date: "20 Januari 2024",
-    relase : "3 minuted ago",
-    excerpt: "Artikel ini menjelaskan berbagai manfaat tanaman untuk kesehatan dan kesejahteraan.",
+    relase: "3 minuted ago",
+    excerpt:
+      "Artikel ini menjelaskan berbagai manfaat tanaman untuk kesehatan dan kesejahteraan.",
     category: "Kesehatan",
     slug: "manfaat-tanaman-untuk-kesehatan",
-    coverImage: doc3
+    coverImage: doc3,
   },
   {
     _id: 4,
     title: "Cara Merawat Tanaman Hias Indoor",
     date: "25 Januari 2024",
-    relase : "4 minuted ago",
-    excerpt: "Panduan lengkap untuk merawat tanaman hias indoor agar tetap sehat dan tumbuh dengan baik.",
+    relase: "4 minuted ago",
+    excerpt:
+      "Panduan lengkap untuk merawat tanaman hias indoor agar tetap sehat dan tumbuh dengan baik.",
     category: "Tanaman Hias",
     slug: "cara-merawat-tanaman-hias-indoor",
-    coverImage: doc4
+    coverImage: doc4,
   },
   {
-
     _id: 5,
     title: "Tanaman Hias yang Cocok untuk Ruangan Sempit",
     date: "30 Januari 2024",
-    relase : "5 minuted ago",
-    excerpt: "Rekomendasi tanaman hias yang cocok untuk diletakkan di ruangan sempit.",
+    relase: "5 minuted ago",
+    excerpt:
+      "Rekomendasi tanaman hias yang cocok untuk diletakkan di ruangan sempit.",
     category: "Tanaman Hias",
     slug: "tanaman-hias-yang-cocok-untuk-ruangan-sempit",
-    coverImage: doc5
-  }
+    coverImage: doc5,
+  },
 
   // {
   //   id: "1",

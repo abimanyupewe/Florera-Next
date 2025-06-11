@@ -1,4 +1,4 @@
-import { Poppins, Karla } from "next/font/google";
+import { Poppins, Karla, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { AppFloreraContentProvider } from "./context/AppFloreraContent";
 
@@ -16,6 +16,12 @@ const karla = Karla({
   variable: "--font-karla",
 });
 
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-plus-jakarta-sans',
+});
+
 export const metadata = {
   title: "Urban Farming | Florera",
   description: "Startup urban farming",
@@ -24,7 +30,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${karla.className} antialiased`}>
+      <body className={`${plusJakartaSans.className} antialiased`}>
         <AppFloreraContentProvider>{children}</AppFloreraContentProvider>
       </body>
     </html>
