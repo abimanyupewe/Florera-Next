@@ -27,12 +27,7 @@ const BlogDetail = () => {
   if (!blogs) return <Loading />;
 
   if (!blogData)
-    return (
-      <div>
-        <h2>Blog tidak ditemukan</h2>
-        <p>Maaf, blog yang Anda cari tidak tersedia.</p>
-      </div>
-    );
+    return <Loading/>
 
   return (
     <div className="px-5">
@@ -112,7 +107,7 @@ const BlogDetail = () => {
                   </div>
                 </div>
 
-                <div className="">
+                <div className="w-52 md:w-full">
                   <div>
                     <h4 className="font-semibold mb-3">Tags:</h4>
                     <div className="flex flex-wrap gap-2">
