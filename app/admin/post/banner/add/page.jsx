@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const AddBanner = () => {
   return (
@@ -6,7 +6,9 @@ const AddBanner = () => {
       <h1 className="text-2xl font-semibold mb-4">Tambah Banner</h1>
       <form className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700">Judul</label>
+          <label className="block text-sm font-medium text-gray-700">
+            Judul
+          </label>
           <input
             type="text"
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
@@ -14,14 +16,18 @@ const AddBanner = () => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Deskripsi</label>
+          <label className="block text-sm font-medium text-gray-700">
+            Deskripsi
+          </label>
           <textarea
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
             placeholder="Masukkan deskripsi banner"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Gambar</label>
+          <label className="block text-sm font-medium text-gray-700">
+            Gambar
+          </label>
           <input
             type="file"
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
@@ -35,7 +41,7 @@ const AddBanner = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddBanner
+export default AddBanner;

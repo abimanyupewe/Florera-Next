@@ -12,7 +12,7 @@ import star_icon from "./star_icon.svg";
 import duration from "./duration.png";
 import module_icon from "./menu_book.png";
 import cart_icon from "./shopping_cart.png";
-import farm1 from "./farm1.png";
+import upload_area from "./upload_area.png";
 
 
 export const assets = {
@@ -30,5 +30,5 @@ export const assets = {
   duration,
   module_icon,
   cart_icon,
-  farm1,
+  upload_area,
 };
