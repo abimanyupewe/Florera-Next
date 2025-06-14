@@ -65,10 +65,10 @@ const HeaderSlider = () => {
                   {slide.title}
                 </h1>
                 <div className="flex items-center mt-4 md:mt-6 ">
-                  <button className="cursor-pointer md:px-10 px-7 md:py-2.5 py-2 bg-emerald-600 hover:bg-emerald-400 rounded-full text-white font-medium">
+                  <button className="cursor-pointer md:px-10 px-7 md:py-2.5 py-2 bg-emerald-600 hover:bg-emerald-400 rounded-full text-white text-sm md:text-base font-medium">
                     {slide.buttonText1}
                   </button>
-                  <button className="cursor-pointer group flex items-center px-6 py-2.5 font-medium hover:underline">
+                  <button className="cursor-pointer group flex items-center px-6 py-2.5 font-medium hover:underline text-sm md:text-base">
                     {slide.buttonText2}
                     <Image src={assets.arrow_right} className='w-4 group-hover:translate-x-2 transition' alt='arrow_right'/>
                     {/* <Image className="group-hover:translate-x-1 transition" src={assets.arrow_icon} alt="arrow_icon" /> */}
