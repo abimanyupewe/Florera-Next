@@ -51,7 +51,7 @@ const ProductCard = ({ product }) => {
 
       <div className="flex gap-2 w-full mt-1">
         <p className="line-through text-base text-gray-400">{currency} {product.price}</p>
-        <p className="text-base font-medium">{currency} {product.discountPrice}</p>
+        <p className="text-base font-medium text-greenPrimary">{currency} {product.discountPrice}</p>
       </div>
 
       <div className="flex w-full justify-evenly gap-2 mt-1">

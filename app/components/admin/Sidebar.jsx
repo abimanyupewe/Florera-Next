@@ -155,7 +155,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen, minimized, setMinimized }) => {
           fixed top-0 left-0 h-full bg-white z-50
           transform transition-transform duration-300 ease-in-out
           md:translate-x-0
-          ${minimized ? "w-20" : "w-64"}
+          ${minimized ? "w-20" : "w-60"}
           flex flex-col
           border-r border-gray-200
         `}

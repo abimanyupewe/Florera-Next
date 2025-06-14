@@ -13,6 +13,7 @@ import duration from "./duration.png";
 import module_icon from "./menu_book.png";
 import cart_icon from "./shopping_cart.png";
 import upload_area from "./upload_area.png";
+import pupuk250ml from "./250ml.png"
 
 
 export const assets = {
@@ -31,4 +32,5 @@ export const assets = {
   module_icon,
   cart_icon,
   upload_area,
+  pupuk250ml,
 };

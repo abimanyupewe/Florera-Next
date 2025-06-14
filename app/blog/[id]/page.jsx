@@ -57,7 +57,7 @@ const BlogDetail = () => {
         </div>
       </div>
 
-      <div className="md:p-16 w-full">
+      <div className="md:p-16 w-full pt-4">
         {/* Content Section */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-14">
           {/* Left column - Content */}
@@ -89,8 +89,8 @@ const BlogDetail = () => {
           {/* Right column - Author and Tags with sticky */}
           <div className="md:w-1/4">
             <div className="sticky top-32 flex flex-col gap-4">
-              <div className="flex md:flex-col gap-8">
-                <div className="space-y-4">
+              <div className="space-y-4 md:flex-col gap-4">
+                <div className="flex md:flex-col space-x-4 space-y-4">
                   <div className="relative md:w-64 w-40 h-40 md:h-64 rounded-lg overflow-hidden shadow-md">
                     <Image
                       src={blogData.author.profileImage}

@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import HeaderAdmin from "../components/admin/Header";
 import Sidebar from "../components/admin/Sidebar";
-
+import HeaderAdmin from "../components/admin/Header";
 
 const LayoutAdmin = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);

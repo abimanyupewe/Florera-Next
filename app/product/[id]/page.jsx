@@ -102,7 +102,7 @@ const ProductDetail = () => {
                         <p className="text-gray-600 mt-3">
                             {productData.description}
                         </p>
-                        <div className="flex mt-6 items-center justify-between">
+                        <div className="md:flex mt-6 space-y-4 items-center justify-between">
                             <p className="text-3xl font-medium">
                                 {currency}{productData.discountPrice}
                                 <span className="text-base font-normal text-gray-800/60 line-through ml-2">
