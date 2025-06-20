@@ -464,18 +464,20 @@ export default function MentorRegister() {
 
         {/* Step 3: Verifikasi */}
         {step === 3 && (
-          <div className="p-6 bg-white rounded-lg shadow-md w-full mx-auto">
+          <div className="mx-auto p-6 bg-white">
             {verificationStatus !== "success" ? (
               <>
-                <p className="mb-8 text-center text-gray-700 font-medium text-lg">
+                <p className="mb-6 text-center text-gray-700 font-medium text-xl">
                   Status verifikasi data Anda
                 </p>
-                <p>Data sedang kami proses silakan tunggu..</p>
+                <p className="mb-8 text-center text-gray-600">
+                  Data sedang kami proses silakan tunggu...
+                </p>
 
                 {/* Flow step status */}
-                <div className="flex items-center justify-between mb-10">
+                <div className="flex items-center justify-between mb-12">
                   <Step
-                    label=" Data Sedang Diproses"
+                    label="Sedang Diproses"
                     active={verificationStatus === "processing"}
                     completed={
                       verificationStatus === "verified" ||
@@ -502,7 +504,7 @@ export default function MentorRegister() {
                 </div>
               </>
             ) : (
-              <div className="text-center text-greenPrimary font-semibold mb-6">
+              <div className="mb-8 text-center text-greenPrimary font-semibold text-lg">
                 Verifikasi berhasil 🎉
               </div>
             )}
@@ -511,14 +513,14 @@ export default function MentorRegister() {
             {verificationStatus === "success" && (
               <button
                 onClick={handleStartTeaching}
-                className="w-full py-3 rounded-lg bg-greenPrimary text-white font-semibold shadow-md hover:bg-emerald-500 transition"
+                className="w-full py-3 mb-8 rounded-lg bg-greenPrimary text-white font-semibold shadow-md hover:bg-emerald-500 transition-colors duration-200"
               >
                 Mulai Mengajar
               </button>
             )}
 
-            <p className="mt-6 text-center text-sm text-gray-500">
-              Jika ada kendala, silakan{" "}
+            <p className="text-center text-md md:text-base text-gray-500">
+              Jika ada kendala, silakan {" "}
               <a
                 href="#"
                 className="text-green-600 hover:underline font-medium"
@@ -538,7 +540,7 @@ export default function MentorRegister() {
 function Step({ label, active, completed }) {
   return (
     <div className="">
-      <div className="relative px-1 flex items-center space-x-2 text-center">
+      <div className="relative px-1 flex flex-col justify-center items-center space-x-2 text-center">
         {/* Circle */}
         <div
           className={`w-12 h-12 rounded-full flex items-center justify-center mb-2
