@@ -22,8 +22,8 @@ export default function RoleActionSelector() {
     setAction(newAction);
 
     if (newAction === "register" && role === "mentor") {
-      router.push("/auth/mentor-register")
-      setLoading(false)
+      router.push("/auth/mentor-register");
+      setLoading(false);
     } else {
       // Jika bukan mentor register, cukup set loading false setelah delay simulasi
       setTimeout(() => setLoading(false), 500);
@@ -37,7 +37,8 @@ export default function RoleActionSelector() {
     setRole(selectedRole);
 
     if (action === "register" && selectedRole === "mentor") {
-      router.push("/auth/mentor-register").finally(() => setLoading(false));
+      setLoading(false);
+      router.push("/auth/mentor-register");
     } else {
       setTimeout(() => setLoading(false), 500);
     }
@@ -65,13 +66,17 @@ export default function RoleActionSelector() {
 
       <div className="md:w-1/2 flex justify-center items-center">
         <div className="bg-white p-8 rounded-lg w-full max-w-md mb-8">
-          <h1 className="w-1/2 text-2xl md:text-4xl font-black mb-6">Welcome to Florera</h1>
+          <h1 className="w-1/2 text-2xl md:text-4xl font-black mb-6">
+            Welcome to Florera
+          </h1>
 
           {/* Dropdown Role Selector */}
           <div className="gap-2 md:flex text-center items-center md:justify-between mb-4 space-y-2">
             {/* Tombol toggle login/register */}
             <div className="gap-2 text-center flex">
-              <p>{action === "login" ? "Don't have account?" : "Have account?"}</p>
+              <p>
+                {action === "login" ? "Don't have account?" : "Have account?"}
+              </p>
               <p
                 onClick={toggleAction}
                 className="text-greenPrimary hover:text-green-700 transition cursor-pointer hover:underline"

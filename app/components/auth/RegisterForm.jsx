@@ -26,15 +26,12 @@ export default function RegisterForm({ role }) {
   };
 
   return (
-    <form
-      className="bg-white p-8 rounded-lg shadow-md"
-      onSubmit={handleSubmit}
-    >
-      <h2 className="text-xl font-semibold mb-4">
+    <form className="" onSubmit={handleSubmit}>
+      {/* <h2 className="text-xl font-semibold mb-4">
         Register sebagai {role.charAt(0).toUpperCase() + role.slice(1)}
-      </h2>
+      </h2> */}
 
-                <h1 className="w-1/2 text-4xl font-black mb-6">Welcome to Florera</h1>
+      {/* <h1 className="w-1/2 text-4xl font-black mb-6">Welcome to Florera</h1> */}
 
       {role === "user" && (
         <>
@@ -45,7 +42,7 @@ export default function RegisterForm({ role }) {
             type="text"
             id="name"
             required
-            className="w-full mb-4 p-2 border rounded"
+            className="w-full mb-4 p-2 pl-3 border border-gray-200 rounded-md outline-gray-200"
             disabled={loading}
           />
         </>
@@ -60,7 +57,7 @@ export default function RegisterForm({ role }) {
             type="text"
             id="storeName"
             required
-            className="w-full mb-4 p-2 border rounded"
+            className="w-full mb-4 p-2 pl-3 border border-gray-200 rounded-md outline-gray-200"
             disabled={loading}
           />
         </>
@@ -73,7 +70,7 @@ export default function RegisterForm({ role }) {
         type="email"
         id="email"
         required
-        className="w-full mb-4 p-2 border rounded"
+        className="w-full mb-4 p-2 pl-3 border border-gray-200 rounded-md outline-gray-200"
         disabled={loading}
       />
 
@@ -84,14 +81,14 @@ export default function RegisterForm({ role }) {
         type="password"
         id="password"
         required
-        className="w-full mb-6 p-2 border rounded"
+        className="w-full mb-4 p-2 pl-3 border border-gray-200 rounded-md outline-gray-200"
         disabled={loading}
       />
 
       <button
         type="submit"
         disabled={loading}
-        className={`w-full flex justify-center items-center gap-2 bg-green-500 text-white py-2 rounded hover:bg-green-600 transition ${
+        className={`w-full bg-greenPrimary text-white py-3 rounded-lg cursor-pointer hover:bg-emerald-500 ${
           loading ? "cursor-not-allowed opacity-70" : ""
         }`}
       >

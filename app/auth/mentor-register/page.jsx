@@ -1,14 +1,22 @@
 "use client";
 
 import MentorRegister from "@/app/components/auth/MentorRegister";
+import { assets } from "@/assets/assets";
+import Image from "next/image";
 
 export default function MentorRegisterPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
-        <h1 className="text-3xl font-bold mb-6 text-center text-green-700">
-          Registrasi Mentor
-        </h1>
+    <div className="md:flex w-full h-screen p-5">
+      <div className="flex md:w-2/5 md:h-full bg-gray-200 rounded-lg justify-center items-center">
+        <div>
+          <Image
+            src={assets.pupuk250ml}
+            alt="img"
+            className="object-cover w-2xs h-full"
+          />
+        </div>
+      </div>
+      <div className="md:w-full flex justify-center items-center">
         <MentorRegister />
       </div>
     </div>
